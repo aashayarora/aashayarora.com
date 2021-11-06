@@ -1,0 +1,5 @@
+#!/bin/bash
+
+IP=$(curl http://ifconfig.me)
+
+curl https://$3:$4@domains.google.com/nic/update?hostname=$1&myip=$IP

@@ -2,4 +2,5 @@
 
 IP=$(curl http://ifconfig.me)
 
-curl https://$3:$4@domains.google.com/nic/update?hostname=$1&myip=$IP
+curl https://$2:$3@domains.google.com/nic/update?hostname=$1&myip=$IP
+# ./updateDynamicDNS hostname username password

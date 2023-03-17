@@ -1,6 +1,11 @@
 #!/bin/bash
 
-IP=$(curl http://ifconfig.me)
+USER=
+PASS=
+DOMAIN=
 
-curl https://$2:$3@domains.google.com/nic/update?hostname=$1&myip=$IP
-# ./updateDynamicDNS hostname username password
+# Update Dynamic DNS Record
+IP=$(curl http://ifconfig.me 2> /dev/null)
+IP6=$(curl -6 https://ifconfig.co/ 2> /dev/null)
+
+curl https://$USER:$PASS@domains.google.com/nic/update?hostname=$DOMAIN&myip=$IP
